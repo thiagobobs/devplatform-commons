@@ -8,6 +8,7 @@ import javax.annotation.Generated;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.devplatform.model.gitlab.GitLabPipeline;
 import com.devplatform.model.gitlab.GitlabDiffRef;
 import com.devplatform.model.gitlab.GitlabMergeRequestAttributes;
 import com.devplatform.model.gitlab.GitlabMilestone;
@@ -114,11 +115,8 @@ public class GitlabMRResponse extends GitlabMergeRequestAttributes {
 	@JsonProperty("first_deployed_to_production_at")
 	private String firstDeployedToProductionAt = null;
 
-	@JsonProperty("pipeline")
-	private Object pipeline = null;
-
 	@JsonProperty("head_pipeline")
-	private Object headPipeline = null;
+	private GitLabPipeline headPipeline = null;
 
 	@JsonProperty("diff_refs")
 	private GitlabDiffRef diffRefs = null;
@@ -535,29 +533,11 @@ public class GitlabMRResponse extends GitlabMergeRequestAttributes {
 		this.firstDeployedToProductionAt = firstDeployedToProductionAt;
 	}
 
-	public GitlabMRResponse pipeline(Object pipeline) {
-		this.pipeline = pipeline;
-		return this;
-	}
-
-	public Object getPipeline() {
-		return pipeline;
-	}
-
-	public void setPipeline(Object pipeline) {
-		this.pipeline = pipeline;
-	}
-
-	public GitlabMRResponse headPipeline(Object headPipeline) {
-		this.headPipeline = headPipeline;
-		return this;
-	}
-
-	public Object getHeadPipeline() {
+	public GitLabPipeline getHeadPipeline() {
 		return headPipeline;
 	}
 
-	public void setHeadPipeline(Object headPipeline) {
+	public void setHeadPipeline(GitLabPipeline headPipeline) {
 		this.headPipeline = headPipeline;
 	}
 

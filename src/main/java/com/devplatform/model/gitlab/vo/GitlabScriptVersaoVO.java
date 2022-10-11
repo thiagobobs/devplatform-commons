@@ -42,11 +42,13 @@ public class GitlabScriptVersaoVO{
 			}
 		}
 
-		if (StringUtils.isEmpty(this.name) || StringUtils.isEmpty(this.version) || StringUtils.isEmpty(this.type)
-				|| StringUtils.isEmpty(this.specificName) || this.order == null) {
-			
-			throw new IllegalArgumentException(String.format("Nome %s inválido", nameWithPath));
-		}
+//		if (StringUtils.isEmpty(this.name) || StringUtils.isEmpty(this.version) || (StringUtils.isEmpty(this.type) && !this.name.contains("VERSAO_INICIAL"))
+//				|| StringUtils.isEmpty(this.specificName) || this.order == null) {
+//			
+//			throw new IllegalArgumentException(String.format("Nome do arquivo %s inválido. %s", nameWithPath, 
+//					(StringUtils.isEmpty(this.name) ? "name vazio" : (StringUtils.isEmpty(this.version) ? "version vazia": (StringUtils.isEmpty(this.type) ? "type vazio" : 
+//						(StringUtils.isEmpty(this.specificName) ? "specificName vazio" : (this.order == null ? "order nulo": "")))))));
+//		}
 	}
 	public String getNameWithPath() {
 		return nameWithPath;
